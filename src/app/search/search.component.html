@@ -1,0 +1,19 @@
+<div class="root">
+  <div class="searchDiv">
+    <mat-form-field class="searchInput">
+      <input matInput [(ngModel)]="keyword" placeholder="搜索编号，名称，单位">
+    </mat-form-field>
+    <div class="btnSearch" (click)=onSearch()></div>
+  </div>
+  <div>
+    <div class="resultCount" *ngIf="results">共有{{results.length}}个结果</div>
+    <mat-nav-list>
+      <div class="itemDiv" *ngFor="let item of results" (click) = onClickItem(item)>
+        <p class="itemTitle"><span *ngIf="item.monitorID">{{item.monitorID}}-</span><span *ngIf="item.name">{{item.name}}</span></p>
+        <p class="itemContent"><span *ngIf="item.owner">{{item.owner}}　</span><span
+            *ngIf="item.telephone">{{item.telephone}}　</span><span *ngIf="item.type">{{item.type}}</span>
+        </p>
+      </div>
+    </mat-nav-list>
+  </div>
+</div>

@@ -23,9 +23,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.css",
+              "src/assets/alertify.core.css",
+              "src/assets/alertify.default.css",
+              "./node_modules/toastr/build/toastr.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/alertify.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -83,6 +89,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -114,6 +121,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "cameraLocation"
 }

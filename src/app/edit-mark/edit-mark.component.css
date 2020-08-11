@@ -1,0 +1,84 @@
+.root {
+  width: auto;
+  background-color: antiquewhite;
+}
+
+.dialogContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background-color: beige; */
+}
+
+.inputContent {
+  width: 350px;
+  height: 100%;
+  /* background-color: blue; */
+  display:flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#optionContent {
+  width: fit-content;
+  height: fit-content;
+  /* background-color: aqua; */
+  position: relative;
+  /* border-left: solid 1px black; */
+}
+
+.rbGroup {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.rb {
+  margin-bottom: 10px;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: row;
+  /* background-color: blueviolet; */
+  align-items: center;
+}
+
+.formField {
+  flex: 1;
+}
+
+.btn_get{
+    cursor: pointer;
+    background-image: url('../../assets/get.png');
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+}
+.btn_get:hover{
+    background-image: url('../../assets/get_over.png');
+}
+
+.znzBg{
+    background-image: url('../../assets/znz1.png');
+    background-size: 200px 200px;
+    width: 200px;
+    height: 200px;
+}
+
+.znz{
+    background-image: url('../../assets/znz3.png');
+    background-size: 21px 120px;
+    width: 21px;
+    height: 120px;
+    position: absolute;
+    top:40px;
+    left: 90px;
+}
+
+.btnDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding:0px 100px
+}

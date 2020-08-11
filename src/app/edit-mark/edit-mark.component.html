@@ -1,0 +1,61 @@
+<h1 mat-dialog-title>{{title}}</h1>
+<div class="dialogContent">
+  <div class="inputContent">
+    <mat-form-field class="formField">
+      <input matInput placeholder="监控类型" (focus)=onCameraTypeFocus() (blur)=onCameraTypeBlur($event) [value]=cameraType
+        autocomplete="off">
+    </mat-form-field>
+    <mat-form-field class="formField">
+      <input matInput placeholder="监控编号" [(ngModel)]="cameraNumber" autocomplete="off">
+    </mat-form-field>
+    <div class="formContent">
+      <mat-form-field class="formField">
+        <input matInput placeholder="监控名称" [(ngModel)]="cameraName" autocomplete="off">
+      </mat-form-field>
+      <div class="btn_get" (click) = onGetCameraName()></div>
+    </div>
+
+    <div class="formContent">
+      <mat-form-field class="formField">
+        <input matInput placeholder="所属单位" [(ngModel)]="cameraOwner" autocomplete="off">
+      </mat-form-field>
+      <div class="btn_get" (click) = onGetCameraOwner()></div>
+    </div>
+
+    <div class="formContent">
+      <mat-form-field class="formField">
+        <input matInput placeholder="联系电话" [(ngModel)]="cameraPhone" autocomplete="off">
+      </mat-form-field>
+      <div class="btn_get" (click) = onGetCameraPhone()></div>
+    </div>
+
+    <mat-form-field class="formField">
+      <input matInput placeholder="照射方向" (focus)=onDirectionFocus() (blur)=onDirectionBlur($event) [value]=cameraAngle
+        autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="formField">
+      <input matInput placeholder="显示级别" type="number" [(ngModel)]="cameraLevel" autocomplete="off">
+    </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="isRunning">正常运行</mat-checkbox>
+  </div>
+  <div id="optionContent">
+    <div *ngIf="isShowSelectTypeUI">
+      <mat-radio-group class="rbGroup" (change)=onCameraTypeChange($event)>
+        <mat-radio-button class="rb" *ngFor="let type of camera_types" [value]="type.name" >
+          {{type.name}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div *ngIf="isShowZnzUI">
+      <div class="znzBg" (mousedown)=onMouseDownZnz($event)></div>
+      <div class="znz" #znz id="znz"></div>
+    </div>
+  </div>
+</div>
+<div class="btnDiv">
+  <button mat-stroked-button (click)="onCancel()">取消</button>
+  <button mat-stroked-button cdkFocusInitial (click) = onSubmit()>确定</button>
+</div>

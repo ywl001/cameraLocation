@@ -1,0 +1,6 @@
+{
+    "/monitorBaidu": {
+        "target": "http://localhost",
+        "secure": false
+    }
+}
